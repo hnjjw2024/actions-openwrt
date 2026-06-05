@@ -118,8 +118,13 @@ jobs:
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
-               
-    
+    - name: 替换RAX3000M NAND的DSA配置文件
+      run: |
+        cd openwrt
+        # 用你仓库中的dtsi替换源码中的
+        cp $GITHUB_WORKSPACE/25db/mt7981-dsa-cmcc-rax3000m.dtsi \
+           target/linux/mediatek/files-5.4/arch/arm64/boot/dts/mediatek/mt7981-dsa-cmcc-rax3000m.dtsi         
+   
     - name: 使用nx30pro的高功率eeprom并固定WiFi MAC地址
       if: github.event.inputs.EEPROM == 'true'
       run: |
