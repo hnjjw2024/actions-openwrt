@@ -8,7 +8,7 @@
 # Description: Build OpenWrt using GitHub Actions
 #
 ###############手动修改##############
-name: simpfily21.02-25db(hanwckf)
+name: 2026simpfily21.02-25db(hanwckf)
 
 on:
   repository_dispatch:
